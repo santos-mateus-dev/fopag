@@ -1,9 +1,6 @@
 package br.com.servirdev.fopag.controller;
 
-import br.com.servirdev.fopag.funcionario.DadosCadastroFuncionario;
-import br.com.servirdev.fopag.funcionario.DadosListagemFuncionario;
-import br.com.servirdev.fopag.funcionario.Funcionario;
-import br.com.servirdev.fopag.funcionario.FuncionarioRepository;
+import br.com.servirdev.fopag.funcionario.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -30,5 +27,12 @@ public class FuncionarioController {
     @GetMapping
     public Page<DadosListagemFuncionario> listarFuncionario(@PageableDefault(size=10, sort={"admissao"}) Pageable paginacao){
         return repository.findAll(paginacao).map(DadosListagemFuncionario::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizarFuncionario(@RequestBody @Valid DadosAtualizacaoFuncionario dados){
+        var funcionario = repository.getReferenceById(dados.id());
+        funcionario.atualizarInformacoes(dados);
     }
 }

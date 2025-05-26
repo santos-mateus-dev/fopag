@@ -3,6 +3,7 @@ package br.com.servirdev.fopag.funcionario;
 import br.com.servirdev.fopag.endereco.DadosEndereco;
 import br.com.servirdev.fopag.endereco.Endereco;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -46,5 +47,23 @@ public class Funcionario {
         this.salario = dados.salario();
         this.admissao = dados.admissao();
         this.endereco = new Endereco(dados.endereco());
+    }
+
+    public void atualizarInformacoes(@Valid DadosAtualizacaoFuncionario dados) {
+        if (dados.nome() != null){
+            this.nome = dados.nome();
+        }
+
+        if (dados.cargo() != null){
+            this.nome = dados.cargo();
+        }
+
+        if (dados.salario() != null){
+            this.salario = dados.salario();
+        }
+
+        if (dados.endereco() != null){
+            this.endereco.atualizarInformacoes(dados.endereco());
+        }
     }
 }
