@@ -55,11 +55,15 @@ public class Funcionario {
         }
 
         if (dados.cargo() != null){
-            this.nome = dados.cargo();
+            this.cargo = dados.cargo();
         }
 
         if (dados.salario() != null){
             this.salario = dados.salario();
+        }
+
+        if (dados.admissao() != null){
+            this.admissao = dados.admissao();
         }
 
         if (dados.endereco() != null){
