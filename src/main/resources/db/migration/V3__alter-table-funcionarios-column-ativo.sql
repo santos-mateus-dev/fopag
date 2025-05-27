@@ -1,0 +1,1 @@
+ALTER TABLE funcionarios ALTER COLUMN ativo TYPE BOOLEAN USING CASE WHEN ativo = 0 THEN false ELSE true END;

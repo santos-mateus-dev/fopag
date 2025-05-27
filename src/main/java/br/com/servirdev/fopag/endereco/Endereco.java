@@ -43,6 +43,10 @@ public class Endereco {
             this.numero = dados.numero();
         }
 
+        if (dados.complemento() != null){
+            this.complemento = dados.complemento();
+        }
+
         if (dados.bairro() != null){
             this.bairro = dados.bairro();
         }
