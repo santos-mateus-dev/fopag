@@ -26,7 +26,7 @@ public class FuncionarioController {
 
     @GetMapping
     public Page<DadosListagemFuncionario> listarFuncionario(@PageableDefault(size=10, sort={"nome"}) Pageable paginacao){
-        return repository.findAll(paginacao).map(DadosListagemFuncionario::new);
+        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemFuncionario::new);
     }
 
     @PutMapping
@@ -34,5 +34,13 @@ public class FuncionarioController {
     public void atualizarFuncionario(@RequestBody @Valid DadosAtualizacaoFuncionario dados){
         var funcionario = repository.getReferenceById(dados.id());
         funcionario.atualizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void inativarFuncionario(@PathVariable Long id){
+        var funcionario = repository.getReferenceById(id);
+        funcionario.inativar();
+
     }
 }

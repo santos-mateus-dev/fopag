@@ -37,7 +37,11 @@ public class Funcionario {
     @Embedded
     private Endereco endereco;
 
+    private boolean ativo;
+
     public Funcionario(DadosCadastroFuncionario dados) {
+
+        this.ativo = true;
         this.nome = dados.nome();
         this.cpf = dados.cpf();
         this.dataNascimento = dados.dataNascimento();
@@ -47,9 +51,11 @@ public class Funcionario {
         this.salario = dados.salario();
         this.admissao = dados.admissao();
         this.endereco = new Endereco(dados.endereco());
+
     }
 
     public void atualizarInformacoes(@Valid DadosAtualizacaoFuncionario dados) {
+
         if (dados.nome() != null){
             this.nome = dados.nome();
         }
@@ -69,5 +75,9 @@ public class Funcionario {
         if (dados.endereco() != null){
             this.endereco.atualizarInformacoes(dados.endereco());
         }
+    }
+
+    public void inativar() {
+        this.ativo = false;
     }
 }
