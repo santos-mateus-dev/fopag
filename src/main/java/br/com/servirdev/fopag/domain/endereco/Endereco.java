@@ -1,4 +1,4 @@
-package br.com.servirdev.fopag.endereco;
+package br.com.servirdev.fopag.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

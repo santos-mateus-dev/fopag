@@ -1,4 +1,4 @@
-package br.com.servirdev.fopag.endereco;
+package br.com.servirdev.fopag.domain.endereco;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

@@ -1,6 +1,6 @@
 package br.com.servirdev.fopag.controller;
 
-import br.com.servirdev.fopag.funcionario.*;
+import br.com.servirdev.fopag.domain.funcionario.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,8 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("funcionarios")

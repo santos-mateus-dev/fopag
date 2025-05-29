@@ -1,4 +1,4 @@
-package br.com.servirdev.fopag.funcionario;
+package br.com.servirdev.fopag.domain.funcionario;
 
 import java.time.LocalDate;
 

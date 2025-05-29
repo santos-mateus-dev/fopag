@@ -1,7 +1,6 @@
-package br.com.servirdev.fopag.funcionario;
+package br.com.servirdev.fopag.domain.funcionario;
 
-import br.com.servirdev.fopag.endereco.DadosEndereco;
-import br.com.servirdev.fopag.endereco.Endereco;
+import br.com.servirdev.fopag.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -10,7 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Table(name = "funcionarios")
 @Entity(name = "Funcionario")

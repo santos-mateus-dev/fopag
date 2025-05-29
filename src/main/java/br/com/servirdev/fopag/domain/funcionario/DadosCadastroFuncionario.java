@@ -1,6 +1,6 @@
-package br.com.servirdev.fopag.funcionario;
+package br.com.servirdev.fopag.domain.funcionario;
 
-import br.com.servirdev.fopag.endereco.DadosEndereco;
+import br.com.servirdev.fopag.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -8,7 +8,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public record DadosCadastroFuncionario(
 
