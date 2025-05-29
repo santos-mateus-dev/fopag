@@ -55,4 +55,10 @@ public class FuncionarioController {
 
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalharFuncionario(@PathVariable Long id){
+        var funcionario = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosDetalhamentoFuncionario(funcionario));
+    }
 }
