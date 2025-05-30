@@ -1,4 +1,4 @@
-package br.com.servirdev.fopag.infra;
+package br.com.servirdev.fopag.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;

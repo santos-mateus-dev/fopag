@@ -1,0 +1,1 @@
+ALTER TABLE funcionarios ALTER COLUMN salario TYPE NUMERIC(10, 2);
