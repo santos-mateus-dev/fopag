@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/folha")
-public class FolhaController {
+public class PagamentoController {
 
     @Autowired
-    private FolhaPagamentoService folhaService;
+    private FolhaPagamento folhaService;
 
     @PostMapping
-    public ResponseEntity FolhaPagamento gerarFolha(@RequestBody)
+    public ResponseEntity FolhaPagamento gerarFolha(@RequestBody Fuincionario funcionario){
+        return folhaService.gerarFolha(funcionario);
+    }
 
 }

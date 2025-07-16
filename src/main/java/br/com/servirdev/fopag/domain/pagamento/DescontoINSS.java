@@ -15,7 +15,7 @@ public class DescontoINSS {
     double tetoInss = 951.64;
 
     //Cálculo
-    public double clacular(double salario) {
+    public double calcular(double salario) {
         double valorDescontoInss = 0;
         if (salario <= 1518) {
             valorDescontoInss = salario * aliquota1;
